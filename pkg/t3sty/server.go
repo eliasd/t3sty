@@ -93,6 +93,7 @@ func (srv *Server) connect(w http.ResponseWriter, r *http.Request) {
             Type: msgMayNotEnter,
             User: u,
           })
+          break;
         }
 
         client = srv.Room.Enter(u)

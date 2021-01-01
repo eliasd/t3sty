@@ -122,7 +122,7 @@ function connect(name) {
             case TYPE.AuthRst:
                 break;
             case TYPE.MayNotEnter:
-                const textInput = messageForm.querySelector('[name="text"]');
+                const textInput = enterForm.querySelector('[name="name"]');
                 textInput.value = '';
                 enterForm.querySelector('input[name="name"]').focus();
                 // we double-rAF here to make sure the previous frame (hiding
