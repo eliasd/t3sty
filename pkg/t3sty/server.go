@@ -80,7 +80,7 @@ func (srv *Server) connect(w http.ResponseWriter, r *http.Request) {
     switch msg.Type {
       case msgHello: {
         u := User {
-          Name: msg.Text
+          Name: msg.Text,
         }
 
         // Server sends msgMayNotEnter:
