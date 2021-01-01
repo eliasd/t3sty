@@ -79,6 +79,7 @@ func (srv *Server) connect(w http.ResponseWriter, r *http.Request) {
 
     switch msg.Type {
       case msgHello: {
+
         u := User {
           Name: msg.Text,
         }
@@ -161,9 +162,7 @@ func StartServer() {
 
     // Configure http request router.
     r.HandleFunc("/", handleHome)
-    r.PathPrefix("/static/").Handler(
-      http.StripPrefix("/static/", http.FileServer(http.Dir("./static")))
-    )
+    r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
     r.HandleFunc("/connect", func(w http.ResponseWriter, r *http.Request) {
       t3stySrv.connect(w, r)
     })
