@@ -107,6 +107,7 @@ input[type="submit"] {
   flex-grow: 1;  /* since parent (form elem)'s main-axis is in column direction
                     this expands the messageListWrapper element's height to
                     expand to fill the available space */
+  height: 0;
   padding: 0;
   width: calc(100% - 12px);
   user-select: auto;
