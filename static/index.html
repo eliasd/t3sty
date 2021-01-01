@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>t3sty.dev</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/blocks.css/dist/blocks.min.css" />
+  <link rel="stylesheet" href="css/t3sty.css" />
+</head>
+
+<body>
+  <form action="POST" id="enterForm" class="plumeForm">
+    <h1>Enter Testy🚪</h1>
+
+    <div class="flexRow left">
+      <label for="login--name">Username</label>
+      <div class="inputWrapper fixed block">
+        <input type="text" name="name" id="login--name" placeholder="Daniel" autofocus/>
+        </div>
+    </div>
+
+    <div class="flexRow right">
+      <div class="submitWrapper block">
+        <input type="submit" value="Start"/>
+      </div>
+    </div>
+  </form>
+
+  <form action="POST" id="messageForm" class="plumeForm">
+    <h1>Testy Chat</h1>
+
+    <div class="messageListWrapper fixed block">
+      <ul class="MessageList">
+      </ul>
+    </div>
+
+    <div class="authorBox">
+      <label for="message--text">Message</label>
+      <div class="inputWrapper fixed block authorBoxInput">
+        <input type="text" name="text" id="message--text" placeholder="Say something..." />
+      </div>
+      <div class="submitWrapper block">
+        <input type="submit" value="Send" />
+      </div>
+    </div>
+  </form>
+
+  <script src="js/t3sty.js"></script>
+</body>
+
+</html>
