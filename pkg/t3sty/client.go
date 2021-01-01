@@ -29,6 +29,7 @@ func (cl *Client) Leave() error {
     return Error{"client is not in a room yet"}
   }
 
+  delete(cl.Room.verifiedNames, cl.User.Name)
   delete(cl.Room.clientReceivers, cl)
   close(cl.receiver)
   cl.Room = nil
