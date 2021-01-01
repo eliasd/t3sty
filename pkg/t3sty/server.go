@@ -35,6 +35,7 @@ func (srv *Server) connect(w http.ResponseWriter, r *http.Request) {
   conn, err := upgrader.Upgrade(w, r, nil)
   if err != nil {
     log.Println(err)
+    log.Println(r.Header)
     return
   }
   defer conn.Close()
@@ -135,7 +136,8 @@ func handleHome(w http.ResponseWriter, r *http.Request) {
   defer indexFile.Close()
 
   if err != nil {
-    io.WriteString(w, "error reading index")
+    wd, _ := os.Getwd()
+    io.WriteString(w, fmt.Sprintf("error reading index.html -- working directory is : %s", wd))
     return
   }
 

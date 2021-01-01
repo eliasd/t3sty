@@ -99,11 +99,11 @@ function connect(name) {
             console.info(message);
         }
 
-        switch (message.type) {
+        switch (message.Type) {
             case TYPE.Hello:
                 break;
             case TYPE.Text:
-                logMessage(message.user.name, message.text);
+                logMessage(message.User.Name, message.Text);
                 break;
             case TYPE.Auth:
                 break;
