@@ -1,11 +1,11 @@
 package t3sty
 
 import (
+  "fmt"
   "io"
   "os"
   "time"
   "log"
-  "strings"
   "net/http"
 
   "github.com/gorilla/mux"
@@ -94,7 +94,7 @@ func (srv *Server) connect(w http.ResponseWriter, r *http.Request) {
           })
         }
 
-        client = serv.Room.Enter(u)
+        client = srv.Room.Enter(u)
         client.OnMessage = func(msg Message) { conn.WriteJSON(msg) }
 
         // Server sends msgAuthAck:
